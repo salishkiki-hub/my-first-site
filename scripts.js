@@ -26,3 +26,13 @@ btn.addEventListener('click', () => {
 });
 
 setInterval(createParticle, 800);
+
+const stpbtn = document.getElementById('stop');
+console.log(stpbtn)
+stpbtn.addEventListener('click', () => {
+  for (let i = 0; i < 20; i++) {
+    setTimeout(createParticle, i * 50);
+  }
+  stpbtn.textContent = 'done';
+  setTimeout(() => { stpbtn.textContent = 'stop'; }, 2000);
+});
